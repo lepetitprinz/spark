@@ -4,7 +4,6 @@ import scala.math.min
 
 object MinTemperatures{
 
-
 	def parseLine(line: String): (String, String, Float) = {
 		val fileds = line.split(",")
 		val stationID = fileds(0)
@@ -23,8 +22,6 @@ object MinTemperatures{
 
 		// Read each line of input data
 		val lines = sc.textFile("data/1800.csv")
-
-		// Read each line of input data
 		val parseLines = lines.map(parseLine)
 
 		// Filter out all but TMIN entries
@@ -38,13 +35,11 @@ object MinTemperatures{
 
 		// Collect, format, and print the results
 		val results = MinTempByStation.collect()
-
-		//
 		for (result <- results.sorted) {
 			val station = result._1
 			val temp = result._2
 			val formattedTemp = f"$temp%.2f F"
-			print(s"$station minimum temperature: $formattedTemp")
+			println(s"station: $station, minimum temperature: $formattedTemp")
 		}
 	}
 
