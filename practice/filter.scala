@@ -5,7 +5,7 @@ import scala.math.min
 object MinTemperatures{
 
 
-	def parseLine(line: String): (String, String, FLoat) = {
+	def parseLine(line: String): (String, String, Float) = {
 		val fileds = line.split(",")
 		val stationID = fileds(0)
 		val entryType = fileds(2)
